@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+  
+<suite name="October Web Testcases" verbose="1" >
+
+  <test name="Login Page Testcases">
+    <classes>
+      <class name="com.qa.democart.tests.LoginPageTest"/>
+    </classes>
+  </test>
+  
+  <test name="Accounts Page Testcases">
+    <classes>
+      <class name="com.qa.democart.tests.AccountsPageTest"/>
+    </classes>
+  </test>
+  
+</suite>
