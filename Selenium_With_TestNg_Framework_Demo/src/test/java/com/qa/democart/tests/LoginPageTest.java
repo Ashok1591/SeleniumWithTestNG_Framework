@@ -15,9 +15,10 @@ public class LoginPageTest extends BaseTest{
 		Assert.assertEquals(title, Constants.LOGIN_PAGE_TITLE);
 	}
 	
-	@Test(priority = 2, enabled=false)
+	@Test(priority = 2, enabled=true)
 	public void verifyForgotPwdLinkTest() {
-		Assert.assertTrue(loginPage.isForgotPwdLinkExist());
+	//	Assert.assertTrue(loginPage.isForgotPwdLinkExist());
+		Assert.assertFalse(loginPage.isForgotPwdLinkExist());
 	}
 	
 	@Test(priority = 3, enabled=true)

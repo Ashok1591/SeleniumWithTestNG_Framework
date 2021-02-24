@@ -1,6 +1,11 @@
 package com.qa.democart.factory;
 
 import java.io.FileInputStream;
+import java.io.File;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -122,4 +127,20 @@ public class DriverFactory {
 		}
 		return prop;
 	} 
+	
+	/**
+	 * this is method is used to take the screenshot and it will return the path 
+	 * of the screenshot 
+	 */
+	public String getScreenshot() {
+		File src = ((TakesScreenshot)getDriver()).getScreenshotAs(OutputType.FILE);
+		String path = System.getProperty("user.dir")+"/screenshots/"+System.currentTimeMillis()+".png";
+		File destination = new File(path);
+		try {
+			FileUtils.copyFile(src, destination);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return path;
+	}
 }
